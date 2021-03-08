@@ -178,7 +178,7 @@ db.alumnos.insertMany([
     {'_id': 10, Materia: 'Francés', PrecioHora:11},
     ])
 
-    /* las horas de clases son las del último mes, es decir, las que se les debe*/
+    /* Las horas de clases son las del último mes, es decir, las que se les debe*/
 
     db.profesores.drop()
     db.profesores.insertMany([
