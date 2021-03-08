@@ -52,32 +52,32 @@ db.alumnos.aggregate([
     { "_id" : "", "Total_aDeber" : 506 }
     
     /*  
-    Recuento de forma separada según sexo del curso en el que están los alumnos
+    Recuento de niñas según el curso en el que están
     */
     db.alumnos.aggregate([
-    {$match:{$or: [ {Sexo: 'F'},{ Sexo: 'M'}]}},
+    {$match: {Sexo: 'F'}},
     {$group: {_id:'$Curso', NumAlumnos:{ $sum: 1}}},
     {$sort: {Curso:1}}
     ])
 
     { 
         "_id" : "3ESO", 
-        "NumAlumnos" : 5 }
+        "NumAlumnos" : 3 }
     { 
         "_id" : "2BACH", 
-        "NumAlumnos" : 5 }
+        "NumAlumnos" : 2 }
     { 
         "_id" : "1BACH", 
-        "NumAlumnos" : 5 }
+        "NumAlumnos" : 2 }
     { 
         "_id" : "1ESO", 
-        "NumAlumnos" : 6 }
-    { 
-        "_id" : "4ESO", 
         "NumAlumnos" : 4 }
     { 
+        "_id" : "4ESO", 
+        "NumAlumnos" : 1 }
+    { 
         "_id" : "2ESO", 
-        "NumAlumnos" : 5 }
+        "NumAlumnos" : 3 }
     
     
    
